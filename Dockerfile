@@ -4,7 +4,7 @@ EXPOSE 3000
  
 WORKDIR /docker_test
 COPY ./docker_test /docker_test
-RUN npm install
+RUN cd docker_test && npm install
  
 USER node
  
