@@ -7,6 +7,4 @@ services:
     container_name: node-dev5
     command: npm start
     ports:
-      - 3000:3000
-    volumes:
-      - ./docker_test:/docker_test
+      - 3000:8081
