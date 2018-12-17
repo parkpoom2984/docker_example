@@ -10,6 +10,8 @@ services:
       - /docker_test/node_modules
     ports:
       - 3000:3000
+    environment:
+      - NODE_ENV=development
   nginx:
     build: ./nginx_test
     image: nginx:0.0.1

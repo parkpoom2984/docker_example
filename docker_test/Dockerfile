@@ -7,7 +7,7 @@ WORKDIR /docker_test
 
 RUN npm install
 RUN npm install --only=dev
- 
+
 USER node
  
 CMD [ "npm", "start" ]
