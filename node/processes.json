@@ -1,7 +1,7 @@
 {
     "apps" : [{
       "merge_logs"  : true,
-      "name"        : "node_sit",
+      "name"        : "node_prod",
       "log_date_format" : "MM/DD/YYYY HH:mm:ss",
       "script"      : "."
     }]
