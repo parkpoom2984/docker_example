@@ -5,9 +5,11 @@ EXPOSE 3000
 ADD . /docker_test
 WORKDIR /docker_test
 
+# Install PM2
+RUN npm install -g pm2
+
 RUN npm install
-RUN npm install --only=dev
 
 USER node
  
-CMD [ "npm", "start" ]
+CMD pm2 start --no-daemon  processes.json

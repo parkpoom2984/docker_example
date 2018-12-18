@@ -1,0 +1,8 @@
+{
+    "apps" : [{
+      "merge_logs"  : true,
+      "name"        : "node_dev",
+      "log_date_format" : "MM/DD/YYYY HH:mm:ss",
+      "script"      : "."
+    }]
+}
