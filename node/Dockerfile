@@ -2,8 +2,8 @@ FROM node:8.12.0-alpine
 
 EXPOSE 3000
 
-ADD . /docker_test
-WORKDIR /docker_test
+ADD . /node
+WORKDIR /node
 
 # Install PM2
 RUN npm install -g pm2
