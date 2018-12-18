@@ -1,28 +1,27 @@
 version: '3.3'
  
 services:
-  node-express:
-    build: ./docker_test
-    image: docker-node:dev
-    container_name: node-dev5
+  docker-node:
+    build: ./node
+    image: docker-node:prod
+    container_name: node-prod
     volumes:
-      - ./docker_test:/docker_test
-      - /docker_test/node_modules
+      - ./node:/node
+      - /node/node_modules
     ports:
       - 3000:3000
     environment:
       - NODE_ENV=production
-  nginx:
-    build: ./nginx_test
-    image: nginx:0.0.1
-    container_name: nginx-dev
+  docker-nginx:
+    build: ./nginx
+    image: docker-nginx:prod
+    container_name: nginx-prod
     ports:
       - 8081:80
     links:
-      - node-express # link "nginx" to "node-express"
+      - docker-node # link "docker-nginx" to "docker-node"
     environment:
-      - NGINX_HOST=foobar.com
       - NGINX_PORT=80
     volumes:
-      - ./nginx_test/html:/usr/share/nginx/html
-      - ./nginx_test/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
