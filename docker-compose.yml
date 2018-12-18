@@ -1,10 +1,10 @@
 version: '3.3'
- 
+
 services:
   docker-node:
     build: ./node
-    image: docker-node:dev
-    container_name: node-dev
+    image: docker-node:local
+    container_name: node-local
     volumes:
       - ./node:/node
       - /node/node_modules
@@ -14,8 +14,8 @@ services:
       - NODE_ENV=development
   docker-nginx:
     build: ./nginx
-    image: docker-nginx:dev
-    container_name: nginx-dev
+    image: docker-nginx:local
+    container_name: nginx-local
     ports:
       - 8081:80
     links:
